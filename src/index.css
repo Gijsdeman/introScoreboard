@@ -21,8 +21,23 @@ html, body {
     width: 30%;
 }
 
-#backdrop {
+.backdrop {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 50%;
     display: block;
+}
+
+.stick {
+    height: 100vh;
+}
+
+.left {
+    left: 20px
+}
+
+.right {
+    right: 20px
 }
 
 .visible {
@@ -60,13 +75,14 @@ html, body {
 
     #image {
         display: block;
-        position: relative;
+        position: absolute;
+        top: 0;
         transform: translate(-50%, 0);
         left: 50%;
         width: 130px;
     }
 
-    #backdrop {
+    .backdrop {
         display:none;
     }
 }

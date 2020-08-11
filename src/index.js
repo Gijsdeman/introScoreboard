@@ -79,59 +79,83 @@ export default function App() {
         superLargeDesktop: {
             // the naming can be any, depends on you.
             breakpoint: { max: 100, min: 100 },
-            items: 5
+            items: 5,
+            slideToSlide: 3,
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3
+            items: 3,
+            slideToSlide: 3
         },
     };
 
     const images = [
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_01_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_02_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_03_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_04_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_05_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_06_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_07_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_08_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_09_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_10_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_11_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_12_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_13_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_14_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_15_resize.jpg",
+        "",
         "https://gewis.nl/~intro20/scoreboard/Strip_Page_16_resize.jpg",
+        "",
     ]
 
     return (
         <div>
-            <div id={"backdrop"}>
-                    <Carousel
-                        responsive={responsive}
-                        autoPlay={true}
-                        autoPlaySpeed={10000}
-                    >
-                        {images.map(image => {
-                            return (
-                                <Image key={image}
-                                    draggable={false}
-                                    style={{ width: "100%" }}
-                                    src={image}
-                                />
-                            );
-                        })}
-                    </Carousel>
-            </div>
+            <Carousel
+                infinite
+                swipeable={false}
+                draggable={false}
+                showDots={false}
+                keyBoardControl={true}
+                containerClass="stick"
+                itemClass="backdrop"
+                responsive={responsive}
+                autoPlay={true}
+                autoPlaySpeed={10000}
+                slidesToSlide={2}
+            >
+                {images.map(image => {
+                    return (
+                        <Image key={image}
+                            draggable={false}
+                            style={{ width: "100%" }}
+                            src={image}
+                        />
+                    );
+                })}
+            </Carousel>
             <Image
                 src={'https://gewis.nl/~intro20/scoreboard/intro20.png'}
                 id={"image"}
             />
             <Table id={"table"}
                 striped
-                npbordered
+                bordered
                 hover
                 size="sm"
                 variant={"flat"}
