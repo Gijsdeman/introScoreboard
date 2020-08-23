@@ -16,7 +16,7 @@ html, body {
     position: absolute;
     background: white;
     transform: translate(-50%, 0);
-    top: 20px;
+    top: 50px;
     left: 50%;
     width: 30%;
 }
@@ -64,13 +64,21 @@ html, body {
     /*color: yellow;*/
 }
 
+#link {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    alignment: center;
+}
+
 @media only screen and (max-width: 1100px) {
     #table {
         position: absolute;
         transform: translate(0, 0);
         left: 0;
         width: 100%;
-        top: 130px;
+        top: 170px;
     }
 
     #image {
@@ -83,6 +91,14 @@ html, body {
     }
 
     .backdrop {
-        display:none;
+        display: none;
+    }
+
+    #link {
+        position: absolute;
+        top: 140px;
+        text-align: center;
+        width: 100%;
+        alignment: center;
     }
 }
